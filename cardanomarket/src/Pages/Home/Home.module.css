@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    border: 2px solid blue;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.header{
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    font-family: 'Poppins';
+    font-size: 54px;
+}
