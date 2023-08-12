@@ -11,7 +11,7 @@ Borders, Box Shadow, and Gaps */
 /* Used for website */
 /* spacing */
 /* box-shadow */
-/* borders */ 
+/* borders */
 /* font-size */
 /* letter-spacing */
 .text-primary {
@@ -339,8 +339,8 @@ Borders, Box Shadow, and Gaps */
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
+  width: 40%;
+  max-width: 40px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;

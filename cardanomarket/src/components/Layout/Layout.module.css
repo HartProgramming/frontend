@@ -6,10 +6,10 @@
   margin: 0px;
   padding: 0px;
 }
-
+ 
 .ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: auto;
   justify-content: center;
   border-bottom: 5px solid rgb(178, 128, 0);
@@ -20,6 +20,13 @@
   width: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .connect {
@@ -45,30 +52,34 @@
     font-size: 30px;
 }
 
-.buttonsContainer {
+
+.expansionDiv{
+  width: 40%;
+  padding: 0px;
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: 70%;
-  justify-content:  center;
-  align-items: flex-end;
+
 }
 
-.a {
+.expansionButton {
+  width: 100%;
+  background-color: rgba(206, 206, 206, 0.304);
+  border-style: none;
+  padding: 0px;
+  margin: 0px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  height: 30px;
+  transition: 3s;
+}
+
+.expansion {
+  height: 40px;
+  width: 40px;
+
+}
+
+.linkListContainer{
   display: flex;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: #1d3da8;
-  letter-spacing: 1.15px;
-}
-
-.linkContainer {
-    width: 100%;
-    display: flex;
-}
-
-.a:hover{
-    color: black;
+  flex-direction: column;
+  border-style: solid;
 }

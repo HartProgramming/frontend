@@ -1,0 +1,29 @@
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 70%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.linkContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+
+.a {
+  display: flex;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #1d3da8;
+  letter-spacing: 1.15px;
+}
+
+.a:hover {
+  color: black;
+}

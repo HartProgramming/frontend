@@ -4,6 +4,7 @@ import snake from "../../pics/snakekowski.png";
 import { useEffect } from "react";
 import classes from "./Connect.module.css";
 import { sort } from "./Test";
+import { AccountBalanceWallet } from "@mui/icons-material";
 import {
   stakeAddyInfo,
   getAddy,
@@ -44,7 +45,7 @@ const WalletButton = (props) => {
             setTimeout(() => {
               getAssetSale(i.unit);
             }, 350);
-            continue
+            continue;
           }
         }
       });
@@ -73,17 +74,13 @@ const WalletButton = (props) => {
   return (
     <>
       {isConnected ? (
-        <img
-          className={classes.button}
-          src={snake}
-          onClick={handleConnect}
-        ></img>
+        <button className={classes.button} onClick={handleConnect}>
+          <AccountBalanceWallet />
+        </button>
       ) : (
-        <img
-          className={classes.button}
-          src={snake}
-          onClick={handleConnect}
-        ></img>
+        <button className={classes.button} onClick={handleConnect}>
+          <AccountBalanceWallet />
+        </button>
       )}
     </>
   );
