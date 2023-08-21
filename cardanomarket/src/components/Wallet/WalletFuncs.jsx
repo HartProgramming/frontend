@@ -29,7 +29,7 @@ async function getAddy(stakeAddress) {
     headers: {
       project_id: "mainnetBM7DSHkmy0Ehjn0O1aec8ZGtvaEnof2k",
     },
-  };
+  }; 
   await axios
     .get(
       `https://cardano-mainnet.blockfrost.io/api/v0/accounts/${stakeAddress}/addresses`,

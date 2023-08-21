@@ -2,16 +2,11 @@ import Table from "../../components/Table/Table";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import React from "react";
-import { nftUseEffect } from "../../walletfuncs/getnft";
 import classes from "./CryptoTable.module.css";
 const NFTPortfolio = () => {
   const [data, setData] = useState([]);
   const [table, setTable] = useState();
 
-  useEffect(() => {
-    nftUseEffect()
-    .then(res => setData(res))
-  }, []);
 
   return (
     <>

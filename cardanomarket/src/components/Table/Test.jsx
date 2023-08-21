@@ -1,5 +1,6 @@
-import { getAddyInfo } from "./WalletFuncs";
+import { getAddyInfo } from "../Wallet/WalletFuncs";
 import { useNavigate } from "react-router";
+
 function sort(add) {
     const claypez = {
         claypez: "bd30c07bed903332937dcf328e2bd6da5aec1e686c13e8c5f2c99e48",

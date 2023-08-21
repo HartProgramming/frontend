@@ -5,6 +5,7 @@
   align-items: center;
   margin: 0px;
   padding: 0px;
+  border-bottom: 2px solid #003366;
 }
  
 .ul {
@@ -12,9 +13,9 @@
   flex-direction: column;
   margin: auto;
   justify-content: center;
-  border-bottom: 5px solid rgb(178, 128, 0);
   text-decoration: none;
-  background-color: #bd9166;
+  background-color: #003366;
+  border-bottom: 2px solid #003366;
   list-style: none;
   align-items: center;
   width: 100%;
@@ -50,6 +51,7 @@
 
 .logoHeader {
     font-size: 30px;
+    color: #50c878;
 }
 
 
@@ -62,7 +64,7 @@
 
 .expansionButton {
   width: 100%;
-  background-color: rgba(206, 206, 206, 0.304);
+  background-color: #50c878;
   border-style: none;
   padding: 0px;
   margin: 0px;

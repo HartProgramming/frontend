@@ -1,10 +1,19 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import classes from "./Table.module.css";
 import React from "react";
+import Expand from "../Icons/Expand";
+import { ModalLabelProps } from "../Modal/BaseModal";
+import { ModalInfoProps } from "../Modal/BaseModal";
+import { ModeStandbyTwoTone } from "@mui/icons-material";
+import TableBody from "./TableBody";
 
-interface TableProps {
+export interface TableProps {
   tokenArray: any | "none";
   nftArray: NFTProps[] | "none";
+  modalVisible: Dispatch<SetStateAction<boolean>>;
+  modalType: Dispatch<SetStateAction<"Notification" | "Buy">>;
+  searchCheck: boolean;
+  searchResult: any;
 }
 
 export interface TokenProps {
@@ -32,11 +41,20 @@ interface NFTProps {
   key: string;
 }
 
-const Table = ({ tokenArray, nftArray}: TableProps) => {
+const Table = ({
+  tokenArray,
+  nftArray,
+  modalVisible,
+  modalType,
+  searchCheck,
+  searchResult,
+}: TableProps) => {
   const [data, setData] = useState();
   const [row, setRow] = useState([]);
   const [arr, setArr] = useState();
   const [header, setHeader] = useState<string[]>([]);
+  const [visibility, setVisibility] = useState<boolean>(true);
+
   const tokenHeadersArray: string[] = [
     "",
     "Ticker",
@@ -62,62 +80,44 @@ const Table = ({ tokenArray, nftArray}: TableProps) => {
   }, []);
 
   return (
-    <>
-      <div className={classes.tableContainer}>
-        <table className={classes.table}>
-          <thead className={classes.tableHead}>
-            <tr className={classes.tableHeaderRow}>
-              {header.map((value) => (
-                <th className={classes.tableHeader}>{value}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className={classes.tableBody}>
-            {tokenArray !== "none" &&
-              tokenArray.map((value: any) => {
+    <div className={classes.tableContainer}>
+      <table className={classes.table}>
+        <thead className={classes.tableHead}>
+          <tr className={classes.tableHeaderRow}>
+            {header.map((value) => (
+              <th className={classes.tableHeader}>{value}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className={classes.tableBody}>
+          {tokenArray !== "none" &&
+          searchCheck === false &&
+          searchResult.length === 0
+            ? tokenArray.map((value: any) => {
                 return (
-                  <tr className={classes.tableRow} key={value.key}>
-                    <td className={classes.tableDetail}>
-                      <img
-                        className={classes.tokenImage}
-                        src={value.image}
-                        alt=""
-                      />
-                    </td>
-                    <td className={classes.tableDetail}>{value.ticker}</td>
-                    <td className={classes.tableDetail}>
-                      {value.ada_current_price}
-                    </td>
-                    <td className={classes.tableDetail}>
-                      {value.ada_daily_volume}
-                    </td>
-                    <td className={classes.tableDetail}>
-                      {value.ada_today_percent}
-                    </td>
-                    <td className={classes.tableDetail}>
-                      {value.ada_sevenDay_percent}
-                    </td>
-                    <td className={classes.tableDetail}>
-                      {value.ada_monthly_percent}
-                    </td>
-                  </tr>
+                  <TableBody
+                    modalType={modalType}
+                    modalVisible={modalVisible}
+                    arrayType="Token"
+                    value={value}
+                    header={header}
+                  />
+                );
+              })
+            : searchResult.map((value: any) => {
+                return (
+                  <TableBody
+                    modalType={modalType}
+                    modalVisible={modalVisible}
+                    arrayType="Token"
+                    value={value}
+                    header={header}
+                  />
                 );
               })}
-            {nftArray !== "none" &&
-              nftArray.map((value) => {
-                return (
-                  <tr className={classes.tableRow} key={value.key}>
-                    <td className={classes.tableDetail}>{value.floor}</td>
-                    <td className={classes.tableDetail}>{value.owners}</td>
-                    <td className={classes.tableDetail}>{value.supply}</td>
-                    <td className={classes.tableDetail}>{value.volume}</td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
-      </div>
-    </>
+        </tbody>
+      </table>
+    </div>
   );
 };
 

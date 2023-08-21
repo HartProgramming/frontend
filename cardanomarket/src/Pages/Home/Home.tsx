@@ -1,4 +1,4 @@
-import WalletButton from "../../components/Table/Connect";
+import WalletButton from "../../components/Wallet/Connect";
 import classes from "./Home.module.css";
 const Home: React.FC = () => {
   return (
@@ -10,6 +10,6 @@ const Home: React.FC = () => {
       </div>
     </>
   );
-}
+};
 
 export default Home;

@@ -6,6 +6,7 @@ import Layout from "./components/Layout/Layout";
 import { BrowserRouterProps } from "react-router-dom";
 import classes from "./app.module.css";
 import CryptoTable from "./Pages/Tokens/CryptoTable";
+import NFTTable from "./Pages/NFTs/NFTTable";
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -13,7 +14,8 @@ const App: React.FC = () => {
         <Layout />
         <Routes>
           <Route path="/home" Component={Home} />
-          <Route path="/crypto" Component={CryptoTable} />
+          <Route path="/tokens" Component={CryptoTable} />
+          <Route path='/nfts' Component={NFTTable} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import LinkList, {
   LinkListProps,
   LinkListArrayProps,
 } from "./components/LinkList";
-import WalletButton from "../Table/Connect";
+import WalletButton from "../Wallet/Connect";
 import { link } from "fs";
 
 export default function Layout() {

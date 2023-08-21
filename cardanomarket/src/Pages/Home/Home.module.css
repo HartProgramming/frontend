@@ -2,8 +2,6 @@
     display: flex;
     margin: auto;
     align-items: center;
-    border: 2px solid blue;
-    margin-top: 50px;
     flex-direction: column;
 }
 
