@@ -15,7 +15,7 @@ export interface TableProps {
   searchCheck: boolean;
   searchResult: any;
 }
-
+ 
 export interface TokenProps {
   adaCurrentPrice: string;
   adaDailyVolume: string;
